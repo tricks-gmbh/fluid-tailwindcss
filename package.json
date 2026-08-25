@@ -58,6 +58,8 @@
     "dev": "tsup --watch",
     "test": "vitest",
     "test:run": "vitest run",
+    "demo": "pnpm --filter fluid-tailwindcss-demo dev",
+    "demo:lint": "pnpm --filter fluid-tailwindcss-demo lint",
     "lint": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },

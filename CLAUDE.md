@@ -6,7 +6,7 @@ This file gives AI agents project-specific guidance for working in this reposito
 
 `fluid-tailwindcss` is a TypeScript Tailwind CSS plugin that creates fluid responsive utilities such as `fl-text-base/2xl` and `fl-p-4/8`. It emits CSS `clamp()` declarations and ships a `fluid-tailwindcss/tailwind-merge` integration.
 
-A Vite React homepage lives in `homepage/` and consumes the package through the pnpm workspace.
+A Vite React playground lives in `demo/` and validates/graphs classes using the plugin source through the pnpm workspace.
 
 ## Read First
 
@@ -25,7 +25,7 @@ Before code changes, read:
 - `src/tailwind-merge/index.ts`: merge groups and conflict behavior.
 - `src/types.ts`: public and internal TypeScript types.
 - `tests/`: Vitest test suite.
-- `homepage/src/`: React documentation/demo site.
+- `demo/`: React playground; see `demo/README.md`.
 
 ## Coding Rules
 
@@ -73,15 +73,16 @@ npm run lint
 npm run build
 ```
 
-For homepage changes from `homepage/`:
+For playground changes, from the repository root:
 
 ```bash
-pnpm lint
-pnpm build
-pnpm dev
+pnpm demo:lint
+pnpm demo
 ```
 
-For UI changes, manually inspect the homepage in a browser when possible.
+For UI changes, manually inspect the playground in a browser when possible.
+
+The playground compiles classes with real Tailwind and the plugin from `src/`. Do not reimplement clamp math there; derive values from the compiled CSS.
 
 ## Common Pitfalls
 
